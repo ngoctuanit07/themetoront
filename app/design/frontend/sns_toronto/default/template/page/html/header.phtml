@@ -1,0 +1,84 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magentocommerce.com for more information.
+ *
+ * @category   design_default
+ * @package    Mage
+ * @copyright  Copyright (c) 2008 Irubin Consulting Inc. DBA Varien (http://www.varien.com)
+ * @license    http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+
+$themeCfg = Mage::helper('toronto/data');
+
+?>
+<style type="text/css">
+<?php
+if(Mage::getStoreConfig('design/header/logo_src_small')!=''){ ?>
+#sns_footer .block.block-aboutus{
+	background-image: url("<?php echo $this->getLogoSrcSmall() ?>");
+}
+<?php } ?>
+</style>
+<!-- BEGIN: Header -->
+<div id="sns_header_top" class="wrap">
+	<div class="container"><div class="inner">
+		<div class="col_left">
+			<?php echo $this->getChildHtml('store_language') ?>
+			<?php echo $this->getChildHtml('currency_top') ?>
+		</div>
+		<div class="col_right">
+			<div class="sns-quickaccess">
+			<?php echo $this->getChildHtml('topLinks') ?>
+			</div>
+		</div>
+	</div></div>
+</div>
+<div id="sns_header_bottom" class="wrap">
+	<div class="container"><div class="inner">
+		<!-- BEGIN: Logo -->
+		<h1 id="logo" class="col-md-12">
+			<a title="<?php echo $this->getLogoAlt() ?>" href="<?php echo $this->getUrl('') ?>">
+				<?php
+				if(Mage::getStoreConfig('design/header/logo_src')!=''){ ?>
+					<img src="<?php echo $this->getLogoSrc(); ?>" alt="<?php echo $this->getLogoAlt() ?>" />
+				<?php
+				} ?>
+				<span><?php echo $this->getWelcome(); ?></span>
+			</a>
+		</h1>
+		<!-- END: Logo -->
+		<div class="col_right">
+	        <?php echo $this->getChildHtml('topSearch') ?>
+			<?php echo $this->getChildHtml('mini-cart') ?>
+		</div>
+	</div></div>
+</div>
+<!-- END: Header -->
+<!-- BEGIN: Menu -->
+<div id="sns_menu" class="wrap">
+    <div class="container">
+    	<div class="inner">
+            <div id="sns_mainnav">
+            	<?php echo $this->getChildHtml('mainmenu'); ?>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- END: Menu -->
+

@@ -1,0 +1,244 @@
+
+<root>
+  <blocks>
+    <cms_block>
+      <title>Footer about us</title>
+      <identifier>toronto_aboutus</identifier>
+      <content><![CDATA[<div class="block block-aboutus">
+<div class="block-content">
+<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen felis non ornare egestas, risus elit placerat mauris book.</p>
+<ul class="sns-socials clearfix">
+<li><a class="social_facebook_circle" title="" href="#" target="_self" data-original-title="Facebook" data-toggle="tooltip">&nbsp;</a></li>
+<li><a class="social_twitter_circle" title="" href="#" target="_self" data-original-title="Twitter" data-toggle="tooltip">&nbsp;</a></li>
+<li><a class="social_pinterest_circle" title="" href="#" target="_self" data-original-title="Pinterest">&nbsp;</a></li>
+<li><a class="social_googleplus_circle" title="" href="#" target="_self" data-original-title="Google Plus" data-toggle="tooltip">&nbsp;</a></li>
+<li><a class="social_flickr_circle" title="" href="#" target="_self" data-original-title="Flickr" data-toggle="tooltip">&nbsp;</a></li>
+<li><a class="social_rss_circle" title="" href="#" target="_self" data-original-title="Rss" data-toggle="tooltip">&nbsp;</a></li>
+</ul>
+</div>
+</div>]]></content>
+      <is_active>1</is_active>
+      <stores>
+        <item>0</item>
+      </stores>
+    </cms_block>
+    <cms_block>
+      <title>Right Banner1</title>
+      <identifier>toronto_rbanner1</identifier>
+      <content><![CDATA[<div class="block block-blank"><a class="banner-item" href="#"><img src="{{media url="wysiwyg/toronto/banner_right1.jpg"}}" alt="" /></a></div>]]></content>
+      <is_active>1</is_active>
+      <stores>
+        <item>0</item>
+      </stores>
+    </cms_block>
+    <cms_block>
+      <title>Main Banner 2</title>
+      <identifier>toronto_mbanner2</identifier>
+      <content><![CDATA[<div class="block block-blank"><a class="banner-item" href="#"><img src="{{media url="wysiwyg/toronto/m-banner2.jpg"}}" alt="" /></a></div>]]></content>
+      <is_active>1</is_active>
+      <stores>
+        <item>0</item>
+      </stores>
+    </cms_block>
+    <cms_block>
+      <title>Links</title>
+      <identifier>toronto_footer_block4</identifier>
+      <content><![CDATA[<h3>Links</h3>
+<ul>
+<li><a href="#">Delivery</a></li>
+<li><a href="#">Service</a></li>
+<li><a href="#">Gift Cards</a></li>
+<li><a href="#">Mobile</a></li>
+<li><a href="#">Manufacturers</a></li>
+</ul>]]></content>
+      <is_active>1</is_active>
+      <stores>
+        <item>0</item>
+      </stores>
+    </cms_block>
+    <cms_block>
+      <title>Help and more</title>
+      <identifier>toronto_footer_block3</identifier>
+      <content><![CDATA[<h3>Help and more</h3>
+<ul>
+<li><a href="#">New products</a></li>
+<li><a href="#">Top sellers</a></li>
+<li><a href="#">Manufactirers</a></li>
+<li><a href="#">Suppliers</a></li>
+<li><a href="#">Specials</a></li>
+</ul>]]></content>
+      <is_active>1</is_active>
+      <stores>
+        <item>0</item>
+      </stores>
+    </cms_block>
+    <cms_block>
+      <title>My Account</title>
+      <identifier>toronto_footer_block2</identifier>
+      <content><![CDATA[<h3>My Account</h3>
+<ul>
+<li><a href="#">Your Account</a></li>
+<li><a href="#">Information</a></li>
+<li><a href="#">Addresses</a></li>
+<li><a href="#">Orders history</a></li>
+<li><a href="#">Delivery Information</a></li>
+<li><a href="{{config path="web/unsecure/base_url"}}catalogsearch/term/popular/">Search Terms</a></li>
+</ul>]]></content>
+      <is_active>1</is_active>
+      <stores>
+        <item>0</item>
+      </stores>
+    </cms_block>
+    <cms_block>
+      <title>Informations</title>
+      <identifier>toronto_footer_block1</identifier>
+      <content><![CDATA[<h3>Informations</h3>
+<ul>
+<li><a href="{{config path="web/unsecure/base_url"}}privacy-policy-cookie-restriction-mode">Terms and conditions</a></li>
+<li><a href="{{config path="web/unsecure/base_url"}}about-magento-demo-store"">About us</a></li>
+<li><a href="{{config path="web/unsecure/base_url"}}catalog/seo_sitemap/category/">Sitemap</a></li>
+<li><a href="{{config path="web/unsecure/base_url"}}contacts/">Contact</a></li>
+<li><a href="#">Return policy</a></li>
+<li><a href="#">Suppliers</a></li>
+</ul>]]></content>
+      <is_active>1</is_active>
+      <stores>
+        <item>0</item>
+      </stores>
+    </cms_block>
+    <cms_block>
+      <title>Main Banner 3</title>
+      <identifier>toronto_mbanner3</identifier>
+      <content><![CDATA[<div class="block block-blank"><a class="banner-item style2" href="#"><img src="{{media url="wysiwyg/toronto/m-banner3.jpg"}}" alt="" /></a></div>]]></content>
+      <is_active>1</is_active>
+      <stores>
+        <item>0</item>
+      </stores>
+    </cms_block>
+    <cms_block>
+      <title>Payment Method</title>
+      <identifier>toronto_paymethod</identifier>
+      <content><![CDATA[<div class="payment-method">
+<ul class="payment">
+<li><a class="paypal" title="Paypal" href="#" data-original-title="Paypal" data-toggle="tooltip">&nbsp;</a></li>
+<li><a class="visa" title="Visa" href="#" data-original-title="Visa" data-toggle="tooltip">&nbsp;</a></li>
+</ul>
+</div>]]></content>
+      <is_active>1</is_active>
+      <stores>
+        <item>0</item>
+      </stores>
+    </cms_block>
+    <cms_block>
+      <title>Toronto Newsletters</title>
+      <identifier>toronto_newsletters</identifier>
+      <content><![CDATA[<div class="block block-subscribe block-gray">
+<div class="block-title">Newsletters</div>
+<div class="block-content clearfix"><label for="newsletter">Subscribe to our newsletter to receive news, updates, free stuff and new releases by email</label> {{block type="newsletter/subscribe" name="footer.newsletter" template="newsletter/subscribe-home.phtml"}}</div>
+</div>]]></content>
+      <is_active>1</is_active>
+      <stores>
+        <item>0</item>
+      </stores>
+    </cms_block>
+    <cms_block>
+      <title>Main Banner 1</title>
+      <identifier>toronto_mbanner1</identifier>
+      <content><![CDATA[<div class="block block-blank block-mbanner1">
+<div class="row">
+<div class="col-sm-4"><a class="banner-item style1" href="#"><img src="{{media url="wysiwyg/toronto/m-banner1-1.jpg"}}" alt="" /></a></div>
+<div class="col-sm-4"><a class="banner-item style1" href="#"><img src="{{media url="wysiwyg/toronto/m-banner1-2.jpg"}}" alt="" /></a></div>
+<div class="col-sm-4"><a class="banner-item style1" href="#"><img src="{{media url="wysiwyg/toronto/m-banner1-3.jpg"}}" alt="" /></a></div>
+</div>
+</div>]]></content>
+      <is_active>1</is_active>
+      <stores>
+        <item>0</item>
+      </stores>
+    </cms_block>
+    <cms_block>
+      <title>Right Banner2</title>
+      <identifier>toronto_rbanner2</identifier>
+      <content><![CDATA[<div class="block block-blank"><a class="banner-item" href="#"><img src="{{media url="wysiwyg/toronto/banner_right2.jpg"}}" alt="" /></a></div>]]></content>
+      <is_active>1</is_active>
+      <stores>
+        <item>0</item>
+      </stores>
+    </cms_block>
+    <cms_block>
+      <title>Right Product Page Banner1</title>
+      <identifier>toronto_pp_rbanner1</identifier>
+      <content><![CDATA[<div class="block block-blank"><a class="banner-item" href="#"><img src="{{media url="wysiwyg/toronto/banner_pp_right1.jpg"}}" alt="" /></a></div>]]></content>
+      <is_active>1</is_active>
+      <stores>
+        <item>0</item>
+      </stores>
+    </cms_block>
+    <cms_block>
+      <title>Right Product Page Banner2</title>
+      <identifier>toronto_pp_rbanner2</identifier>
+      <content><![CDATA[<div class="block block-blank"><a class="banner-item" href="#"><img src="{{media url="wysiwyg/toronto/banner_pp_right2.jpg"}}" alt="" /></a></div>]]></content>
+      <is_active>1</is_active>
+      <stores>
+        <item>0</item>
+      </stores>
+    </cms_block>
+    <cms_block>
+      <title>Slide Html1</title>
+      <identifier>toronto_slide1</identifier>
+      <content><![CDATA[<ul>
+<li data-masterspeed="700" data-slotamount="7" data-transition="random"><img src="{{media url="wysiwyg/toronto/slideshow/bg_sl1.jpg"}}" alt="" data-bgposition="right top" data-bgpositionend="center center" />
+<div class="tp-caption cwhite fs50 fwbold tuppercase randomrotate randomrotateout tp-resizeme" style="max-width: auto; max-height: auto; white-space: nowrap;" data-x="center" data-y="150" data-start="300" data-splitout="chars" data-splitin="chars" data-speed="1000" data-endspeed="500" data-easing="Linear.easeNone">New collection</div>
+<div class="tp-caption cwhite fs20 tuppercase tright sfb fwbold" style="max-width: 470px; max-height: auto; white-space: normal;" data-x="center" data-y="195">This month only</div>
+<a class="tp-caption cwhite lfb" style="max-width: auto; max-height: auto; text-align: center;" href="#" data-x="center" data-y="225" data-start="800" data-speed="1000" data-endspeed="500">Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,<br /> when an unknown printer took a galley of type and scrambled it to<br /> make a type specimen book. </a></li>
+</ul>]]></content>
+      <is_active>1</is_active>
+      <stores>
+        <item>0</item>
+      </stores>
+    </cms_block>
+    <cms_block>
+      <title>Slide Html2</title>
+      <identifier>toronto_slide2</identifier>
+      <content><![CDATA[<ul>
+<li data-masterspeed="700" data-slotamount="7" data-transition="random"><img src="{{media url="wysiwyg/toronto/slideshow/bg_sl2.jpg"}}" alt="" data-bgposition="left top"/>
+<div class="tp-caption cwhite fs50 tuppercase fwbold" style="max-width: auto; max-height: auto; white-space: nowrap;" data-x="center" data-y="150" data-start="800" data-speed="1000" data-endspeed="500">Big sale</div>
+<div class="tp-caption cwhite fs20 fwbold tuppercase" style="max-width: auto; max-height: auto; white-space: nowrap;" data-x="center" data-y="190" data-start="1600" data-speed="1000" data-endspeed="500">This month only</div>
+<div class="tp-caption cwhite fs70 tuppercase fwbold" style="max-width: auto; max-height: auto; white-space: nowrap;" data-x="center" data-y="235" data-start="2400" data-speed="1000" data-endspeed="500">upto <span class="use-color">50%</span> off</div>
+</li>
+</ul>]]></content>
+      <is_active>1</is_active>
+      <stores>
+        <item>0</item>
+      </stores>
+    </cms_block>
+    <cms_block>
+      <title>Slide Html3</title>
+      <identifier>toronto_slide3</identifier>
+      <content><![CDATA[<ul>
+<li data-masterspeed="700" data-slotamount="7" data-transition="random"><img src="{{media url="wysiwyg/toronto/slideshow/bg_sl3.jpg"}}" alt="" data-bgposition="left bottom" />
+<div class="tp-caption cwhite fs50 tuppercase fwbold sft" style="max-width: auto; max-height: auto; white-space: nowrap;" data-x="center" data-y="150" data-start="800" data-speed="1000" data-endspeed="500">Summer sale</div>
+<div class="tp-caption cwhite fs50 fwbold tuppercase sfr" style="max-width: auto; max-height: auto; white-space: nowrap;" data-x="center" data-y="205" data-start="1600" data-speed="1000" data-endspeed="500"><span class="use-color">- 30%</span></div>
+<a class="tp-caption cwhite fs14 fwbold tuppercase sfl" style="max-width: auto; max-height: auto; white-space: nowrap;" href="#" data-x="center" data-y="245" data-start="2400" data-speed="1000" data-endspeed="500">And free shipping </a></li>
+</ul>]]></content>
+      <is_active>1</is_active>
+      <stores>
+        <item>0</item>
+      </stores>
+    </cms_block>
+    <cms_block>
+      <title>Custom Tab1</title>
+      <identifier>toronto_customtab1</identifier>
+      <content><![CDATA[<p>Pellentesque vulputate bibendum lorem. Nunc lobortis. Vestibulum aliquam fringilla mauris. Vivamus dolor est, eleifend id, varius id, suscipit at, felis. Nulla mattis cursus neque. Nam lobortis mi vitae sem vehicula accumsan. Integer vitae odio in felis facilisis cursus. Sed bibendum mauris a justo. Integer ut mi. Maecenas quis mauris. Integer non lectus at magna elementum posuere.</p>
+<blockquote>
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+  <footer>Someone famous in <cite title="Source Title">Source Title</cite></footer>
+</blockquote>
+<p>Nulla mauris odio, vehicula in, condimentum sit amet, tempus id, metus. Donec at nisi sit amet felis blandit posuere. Aliquam erat volutpat. Cras lobortis orci in quam porttitor cursus. Aenean dignissim. Curabitur facilisis sem at nisi laoreet placerat. Duis sed ipsum ac nibh mattis feugiat. Proin sed purus. Vivamus lectus ipsum, rhoncus sed, scelerisque sit amet, ultrices in, dolor. Aliquam vel magna non nunc ornare bibendum. Sed libero. Maecenas at est. Vivamus ornare, felis et luctus dapibus, lacus leo convallis diam, eget dapibus augue arcu eget arcu.</p>]]></content>
+      <is_active>1</is_active>
+      <stores>
+        <item>0</item>
+      </stores>
+    </cms_block>
+  </blocks>
+</root>

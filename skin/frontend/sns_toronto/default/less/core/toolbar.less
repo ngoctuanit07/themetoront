@@ -1,0 +1,184 @@
+.toolbar { 
+	padding: 0; 
+	margin: 0; 
+	border-bottom: 1px dashed #bbb;
+	.category-products > & {
+		.view-mode {
+			float: left;
+		}
+		.sort-by, .limiter {
+			text-align: left;margin: 0;padding: 10px 0; float: left;
+		} 
+		.limiter {
+			padding-left: 30px;
+			margin: 0 0;
+		}
+	}
+	.toolbar-bottom & {
+		margin-top: 20px;
+	}
+	.toolbar-inner {
+		> * {
+			.inline-block();
+			margin: 0;
+		}
+	}
+	.view-mode{ padding: 10px 40px 10px 0; vertical-align:middle;
+		label {margin: 0 4px 0 0; font-weight: normal; text-transform: uppercase;display: inline-block; line-height: 30px; float: left;}
+		a, strong {
+			.square(30px); float: left; margin: 0 0 0 5px;
+			display: inline-block;text-align: center;line-height: 30px;position: relative;color: #666; border: 1px solid #ddd;
+			&:before {
+				font-size: 16px;line-height: 30px;
+			}
+		}
+		a {
+			&:hover {
+				background-color: @color1;color: @white;border-color: @color1;
+			}
+		}
+		strong {
+			background-color: @color1;color: @white;border-color: @color1;
+		}
+		.icon-grid:before {
+			.font-elegant (e08c, 16px); line-height: 30px;
+		}
+		.icon-list:before {
+			.font-elegant (64, 16px); line-height: 30px;
+		}
+	}
+	.limiter { color: #333;
+		label{
+			.inline-block();
+			margin: 0 5px 0 0; text-transform: uppercase;
+			font-weight: normal;
+		}
+		.select-new{ color: #666;
+			.inline-block(); margin-right: 3px;
+			.select-inner{ 
+				cursor: pointer;
+				select{
+					.opacity(0);
+				}
+				.jqTransformSelectWrapper{
+					.transition(all 0.2 ease-in);
+					height: 30px; border: 1px solid #ddd; background: none;z-index: 2 !important;
+					&:hover{
+						ul {
+							display: block !important;
+						}
+					}
+					div{
+						span{ 
+							line-height: 30px;  height: 30px; padding-left: 10px;color: inherit;width: auto !important;
+						}
+						a.jqTransformSelectOpen{
+							&:before {
+								.font-elegant (43, 16px); font-size: 16px; color: #aaa;
+								width: 15px; line-height: 30px;
+							}
+							right: 5px;position: absolute;height: 100%;width: 15px;
+						}
+					}
+					ul{
+						top: 100%; width: 100% !important; box-sizing:content-box;left: -1px !important;
+						border-color: #ddd;
+						a {
+							padding: 2px 6px; color: inherit;background-position: center 10px;
+							&.selected{background: #f2f2f2; color: @labelColor;}
+							&:hover{background: #f2f2f2; color: @labelColor;}
+						}
+					}
+				}
+				select{
+					cursor: pointer;width: 50px; border: none; background: none;
+				}
+			}
+		}
+	}
+	.sort-by{
+		.limiter;
+		.select-new{ color: #666;
+			.select-inner{ 
+				.jqTransformSelectWrapper{
+					width: 90px !important; 
+				}
+			}
+		}
+		.set-desc,.set-asc{ 
+			.inline-block();.square(30px);width: 15px;position: relative; background: none;
+			margin: 0 10px 0 0;.transition(all 0.2s ease-in);text-align: center;color: #666; overflow: hidden;
+			&:before{ 
+				.font-elegant (!, 16px); font-size: 16px; line-height: 30px;
+				width: 15px;
+			}
+			&:hover{
+				&:before {
+					color: @color1;
+				}
+			}
+		}
+		.set-desc{
+			&:before{
+				content: "\"";
+			}
+		}
+	}
+	.pager {
+		padding: 15px 0 10px 10px; 
+		float: right;
+		p.amount { display: none; }
+		.pages {
+			> strong {
+				display: none;
+			}
+			> ol {
+				.inline-block();
+				.ulclear();
+				li {
+					text-align: center;
+					.inline-block();
+					.square(20px);
+					line-height: 20px;
+					overflow: hidden;
+					
+					&.current {
+						background-color: @color1;
+						color: @white;
+					}
+					a {
+						display: block;padding: 0;border: none;background: none;border-radius: 0;
+						&.previous,
+						&.next {
+							color: transparent;
+							&:hover {
+								&:before {
+									color: #fff;
+								}
+							}
+							&:before {
+								color: #333;
+							}
+						}
+						&.previous {
+							&:before {
+								.font-elegant (34, 16px); font-size: 16px; line-height: 20px;
+							}
+						}
+						&.next {
+							&:before {
+								.font-elegant (35, 16px); font-size: 16px; line-height: 20px;
+							}
+							
+						}
+					}
+					&:hover {
+						a {
+							background-color: @color1;color: #fff;
+						}
+					}
+				}
+			}
+		}
+	}
+}

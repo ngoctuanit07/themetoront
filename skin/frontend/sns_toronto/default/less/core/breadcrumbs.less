@@ -1,0 +1,29 @@
+#sns_breadcrumbs {
+	min-height: 20px;
+	margin: 0 0; color: #666;
+	body.homepage & {display: none;}
+}
+#sns_pathway {
+	.clearfix();
+	padding: 12px 0 13px;
+	margin: 0;
+	.breadcrumbs{
+		.ulclear();
+		.inline-block();
+		li{
+			display: inline-block;
+			&:before {
+				content: "5";margin: 0;font-family: "ElegantIcons"; font-size: 15px; position: relative;top: 2px;
+			}
+			> * {
+				padding: 0 2px; color: inherit;
+			}
+			a:hover{color: @color1}
+			&:first-child{
+				> * {padding-left: 0px;}
+				&:before {display: none;}
+			}
+			&.last span {color: @color1;}
+		}
+	}
+}

@@ -1,0 +1,93 @@
+<?php
+$options = $this->getConfigObject();
+if( $options->list_products_by == 'order' ){
+	$list = $this->getListByOrder();
+} else {
+	$list = $this->getListByCategory();
+}
+///Zend_Debug::dump($list); die;
+$uq = rand().time();
+include 'scripts.phtml';
+$class_res = ((int)$options->devices_wide > 0)?' wide-'.$options->devices_wide:' wide-6';
+$class_res .= ((int)$options->devices_normal > 0)?' normal-'.$options->devices_normal:' normal-6';
+$class_res .= ((int)$options->devices_tabletlandscape > 0)?' tabletlandscape-'.$options->devices_tabletlandscape:' tabletlandscape-6';
+$class_res .= ((int)$options->devices_tabletportrait > 0)?' tabletportrait-'.$options->devices_tabletportrait:' tabletportrait-6';
+$class_res .= ((int)$options->devices_mobilelandscape > 0)?' mobilelandscape-'.$options->devices_mobilelandscape:' mobilelandscape-6';
+$class_res .= ((int)$options->devices_mobileportrait > 0)?' mobileportrait-'.$options->devices_mobileportrait:' mobileportrait-6';
+?>
+<?php if(!empty($list)){ ?>
+<div id="sns_producttabs<?php echo $uq; ?>" class="sns-producttabs">
+	<div class="sns-pdt-head">
+		<h3><span><?php echo $options->title; ?><span></h3>
+		<div class="sns-pdt-nav">
+			<div class="pdt-nav">
+				<?php foreach($list as $item){
+				?>
+				<span class="item-nav<?php echo (isset($item->active) && $item->active==1)?' tab-nav-actived tab-loaded':''; ?>" 
+					data-type="<?php echo $options->list_products_by; ?>"
+					data-catid="<?php echo ($options->list_products_by == 'order')?"":$item->id ?>"
+					data-orderby="<?php echo $item->orderid; ?>" data-href="pdt_<?php echo ($item->id == "*")?'all':$item->id; ?>">
+					<span class="title-navi"><?php echo $item->title; ?>
+					</span>
+				</span>
+				<?php } ?>
+			</div>
+		</div>
+	</div>
+	<?php if( $options->pretext != ""){ ?>
+	<div class="pre-text">
+		<?php echo $options->pretext;?>
+	</div>
+	<?php }?>
+	<div class="sns-pdt-container">
+		<!--Begin Tab Nav -->
+		
+		<!-- End Tab Nav -->
+		<!--Begin Tab Content -->
+		<div class="sns-pdt-content<?php echo $class_res; ?>">
+			<?php foreach($list as $items) :
+				$cls = (isset($items->active) && $items->active  == 1)?' tab-content-actived is-loaded': '';
+				$cls .= ($items->id == "*")?' pdt_all':' pdt_'.$items->id;
+			?>
+			<div class="pdt-content<?php echo $cls; ?>" >
+				<div class="pdt-list products-grid<?php echo ' '.$options->effects; ?> style2">
+				<?php
+					$i++;
+					if($i==1){
+						include 'items.phtml';
+					}else{ ?>
+						<div class="content-loading"></div>
+					<?php
+					}
+				?>
+				</div>
+				<div class="pdt-loadmore" data-href="pdt_<?php echo ($items->id == "*")?'all':$items->id; ?>"
+				data-type="<?php echo $options->list_products_by; ?>"
+				data-catid="<?php echo ($options->list_products_by == 'order')?"":$items->id ?>"
+				data-orderby="<?php echo $items->orderid; ?>"
+				data-all=""
+				data-start="<?php echo $options->number_per_display;?>"
+				data-loadnum="<?php echo $options->number_per_display;?>">
+					<div class="btn-loadmore">
+						<span class="loadmore button" 
+						data-label="" 
+						data-label-load=""></span>
+					<?php if( $options->show_number_loadmore ):?>
+						<span class="load-number" data-more=""
+						data-total=""></span>
+					<?php endif;?>
+						<span class="ico-loading"></span>
+					</div>
+				</div>
+			</div>
+			<?php
+			endforeach; ?>
+		</div>
+	</div>
+	<!--End Tab Content -->
+	<?php if(!empty($options->posttext)) {  ?>
+	<div class="post-text"><?php echo $options->posttext; ?></div>
+	<?php } ?>
+</div>
+<?php } else { echo '<p class="note-msg">' . $this->__('There are no products matching the selection.') . '</p>';}?>
+

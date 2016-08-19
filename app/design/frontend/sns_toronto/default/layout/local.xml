@@ -1,0 +1,110 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+    <default>
+    	<remove name="currency" />
+    	<remove name="right_currency" />
+    	
+    	
+    	<reference name="root">
+            <block type="core/text_list" name="before_footer" translate="label">
+                <label>before_footer</label>
+            </block>
+        </reference>
+    	<reference name="head">
+    		<!-- Theme css -->
+    		<action method="addItem"><type>js_css</type><name>sns/fancybox2/jquery.fancybox.css</name></action>
+    		<action method="addItem"><type>js_css</type><name>sns/fancybox2/helpers/jquery.fancybox-buttons.css</name></action>
+    		<action method="addItem"><type>js_css</type><name>sns/fancybox2/helpers/jquery.fancybox-thumbs.css</name></action>
+
+        	<action method="addItem"><type>js_css</type><name>sns/owl-carousel/owl.carousel.css</name></action>
+        	<action method="addItem"><type>js_css</type><name>sns/owl-carousel/owl.transitions.css</name></action>
+        	
+        	<action method="addItem"><type>js_css</type><name>sns/jqtransform/css/jqtransform.css</name></action>
+			
+            <action method="addItem"><type>skin_css</type><name helper="toronto/data/getThemeCSS"/><params/></action>
+            
+            <!-- End Theme css -->
+            
+            <!-- Theme js -->
+            
+            <action method="addJs"><script>sns/countdown/jquery.plugin.min.js</script></action>
+            <action method="addJs"><script>sns/countdown/jquery.countdown.min.js</script></action>
+            
+            
+            <action method="addJs"><script>sns/tabdrop/bootstrap-tabdrop.js</script></action>
+            <action method="addJs"><script>sns/owl-carousel/owl.carousel.min.js</script></action>
+            <action method="addJs"><script>sns/jqtransform/js/jquery.jqtransform.js</script></action>
+            <action method="addJs"><script>sns/fancybox2/jquery.fancybox.pack.js</script></action>
+            <action method="addJs"><script>sns/fancybox2/helpers/jquery.fancybox-buttons.js</script></action>
+            <action method="addJs"><script>sns/fancybox2/helpers/jquery.fancybox-media.js</script></action>
+            <action method="addJs"><script>sns/fancybox2/helpers/jquery.fancybox-thumbs.js</script></action>
+			
+			<!-- <action method="addItem"><type>skin_js</type><name>js/jquery.accordion_snyderplace.js</name></action> -->
+			<action method="addItem"><type>skin_js</type><name>js/jquery.sticky-kit.min.js</name></action>
+			
+            <action method="addJs" ifconfig="sns_toronto_cfg/advance/showCpanel"><script>sns/minicolors/jquery.miniColors.min.js</script></action>
+            <action method="addCss" ifconfig="sns_toronto_cfg/advance/showCpanel"><stylesheet>css/sns-cpanel.css</stylesheet></action>
+            <action method="addItem" ifconfig="sns_toronto_cfg/advance/showCpanel"><type>js_css</type><name>sns/minicolors/jquery.miniColors.css</name></action>
+            <action method="addItem" ifconfig="sns_toronto_cfg/advance/showCpanel"><type>skin_js</type><name>js/sns-cpanel.js</name></action>
+			
+			<action method="addItem"><type>skin_js</type><name>js/sns-extend.js</name></action>
+            <action method="addItem"><type>skin_js</type><name>js/sns-script.js</name></action>
+			<action method="addItem"><type>skin_js</type><name>js/ie8-responsive-file-warning.js</name><params/><if>lte IE 8</if></action>
+			<action method="addItem"><type>skin_js</type><name>js/html5shiv.js</name><params/><if>lte IE 8</if></action>
+			<action method="addItem"><type>skin_js</type><name>js/respond.min.js</name><params/><if>lte IE 8</if></action>
+    		<!-- End Theme js -->
+    	</reference>
+    	<reference name="header">
+                <block type="page/switch" name="store_language" as="store_language" template="page/switch/languages.phtml"/>
+                <block type="page/switch" name="store_flag" as="store_flag" template="page/switch/flags.phtml"/>
+				<block type="directory/currency" name="currency_top" template="directory/currency.phtml"/>
+    		<block type="toronto/mainmenu" name="mainmenu.top" as="mainmenu" />
+        </reference>
+
+        
+        <reference name="right">
+        	<!--<block type="catalog/navigation" name="catalog.categories" before="-" template="sns/blocks/sidenav.phtml"/>-->
+        	<!--<block type="catalog/product_compare_sidebar" after="catalog.leftnav" name="catalog.compare.sidebar" template="catalog/product/compare/sidebar.phtml"/>-->
+		    <block type="cms/block" name="right.banner1">
+		        <action method="setBlockId"><block_id>toronto_rbanner1</block_id></action>
+		    </block>
+		    <block type="productlist/list" template="sns/productlist/default.phtml" name="right.productlist" after="right.banner1" >
+                <action method="setConfig">
+                </action>
+            </block>
+            <block type="cms/block" name="right.banner2" after="right.productlist">
+		        <action method="setBlockId"><block_id>toronto_rbanner2</block_id></action>
+		    </block>
+        </reference>
+
+    	<reference name="before_body_end">
+    		<block type="core/template" template="sns/blocks/utilities/cpanel.phtml" />
+    		<block type="core/template" template="sns/blocks/utilities/scrolltotop.phtml" />
+    		<block type="core/template" template="sns/blocks/sticky.phtml" />
+    		<!--<block type="core/template" template="sns/blocks/utilities/testlist.phtml" />-->
+        </reference>
+    </default>
+
+    <cms_index_index>
+		
+    </cms_index_index>
+	<catalog_category_default>
+
+	</catalog_category_default>
+
+	<catalog_product_view>
+        <reference name="head">
+            <action method="addJs"><script>sns/elevatezoom/jquery.elevateZoom-3.0.8.min.js</script></action>
+        </reference>
+	</catalog_product_view>
+	
+	<review_product_list>
+        <reference name="root">
+            <action method="setTemplate"><template>page/2columns-right.phtml</template></action>
+        </reference>
+        <reference name="head">
+            <action method="addJs"><script>sns/elevatezoom/jquery.elevateZoom-3.0.8.min.js</script></action>
+        </reference>
+	</review_product_list>
+    
+</layout> 

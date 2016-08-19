@@ -1,0 +1,73 @@
+<?php
+	$themeCfg = Mage::helper('toronto/data');
+
+	$enabled = $themeCfg->getField('slidercategory_enabled');
+	if($enabled == 1) :
+		$category = $themeCfg->getField('slidercategory_category');
+		$array_category = unserialize($category);
+		$id = 1;
+		$collect_category = array();
+		foreach($array_category as $key=>$category){
+			$category['id'] = $id;
+			$category['image'] = Mage::helper('cms')->getBlockTemplateProcessor()->filter($category['image']);
+			if (preg_match('/^wysiwyg/i', $category['image'])) {
+				$category['image'] = Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA).$category['image'];
+			}
+			$category['link'] = Mage::helper('cms')->getBlockTemplateProcessor()->filter($category['link']);
+			$haveHttp =  strpos(trim($category['link']), "http://"); 
+			if(!$haveHttp && ($haveHttp!==0)){
+				//$category['link'] = "http://" . trim($partner['link']);  
+			}else {
+				//$category['link'] = trim($partner['link']);
+			}
+			$collect_category[] = $category;
+			$id++;
+		}
+if($collect_category) :
+	$blockId ='sns_slidercategory_'.rand().time();
+?>
+<div class="sns-slidercategory" id="<?php echo $blockId; ?>">
+	<div class="block_head_center">
+		<h3><?php echo $themeCfg->getField('slidercategory_title'); ?></h3>
+	</div>
+	<div class="category-slider"><div class="inner" style="display: none;">
+		<?php foreach($collect_category as $category) : ?>
+			<div class="item">
+				<a target="<?php echo $category['target']; ?>" class="image" href="<?php echo $category['link']; ?>">
+					<img alt="" src="<?php echo $category['image']; ?>" />
+				</a>
+				<a class="title" target="<?php echo $category['target']; ?>" href="<?php echo $category['link']; ?>">
+					<?php echo $category['title']; ?>
+				</a>
+			</div>
+		<?php endforeach; ?>
+	</div></div>
+	<script>
+		jQuery(document).ready(function($) {
+			$(window).load(function(){
+				$('#<?php echo $blockId; ?> .category-slider .inner').owlCarousel({
+					items: 6,
+					itemsCustom: [
+						[0, 2],
+						[480, 3],
+						[768, 4],
+						[992, 5],
+						[1200, 6]
+					],
+					pagination: false,
+					itemsScaleUp : true,
+					slideSpeed : 1000,
+					paginationSpeed: 3000,
+					rewindSpeed: 1000,
+					stopOnHover: true,
+					autoPlay: true,
+					addClassActive: true,
+					navigation: true,
+					navigationText: ['<i class="fa fa-angle-left"></i>', '<i class="fa fa-angle-right"></i>']
+				});
+			});
+		});
+	</script>
+</div>
+<?php endif; ?>
+<?php endif; ?>

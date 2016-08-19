@@ -1,0 +1,16 @@
+<?php
+	$_helper = $this->helper('catalog/output');
+	$_product = $this->getData("product"); ?>
+<div class="content-cfbox">
+	<div class="cf-producinfo">
+		<a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" class="product-image"><img src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->resize(80, 85); ?>" alt="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" /></a>
+	</div>
+<!-- 	<div class="cf-moreinfo">
+		<?php if( $this->getReviewsSummaryHtml($_product, 'short')){ ?>
+		<?php echo $this->getReviewsSummaryHtml($_product, 'short') ?>
+		<?php } ?>
+		<div class="price-container">
+			<?php echo $this->getPriceHtml($_product, true) ?>
+		</div>
+	</div> -->
+</div>	

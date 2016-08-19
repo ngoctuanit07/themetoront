@@ -1,0 +1,148 @@
+<?php
+$themeCfg = Mage::helper('toronto/data');
+$useSR = $themeCfg->getField('sticky_useStickyRight'); 
+if($useSR == 1) : ?>
+<div id="sns_sticky_right">
+<?php
+	$stickyR = $themeCfg->getField('sticky_listStickyRight');
+	$array_stickyR = unserialize($stickyR);
+	$collect_stickyR = array();
+	foreach($array_stickyR as $key=>$sticky){
+		//$sticky['icon'] = Mage::helper('cms')->getBlockTemplateProcessor()->filter($sticky['icon']);
+		$collect_stickyR[] = $sticky;
+	}
+	if($collect_stickyR) :
+		foreach($collect_stickyR as $sticky) :
+			if(Mage::getModel('cms/block')->load($sticky['content'])->getIsActive()):
+				$content = $this->getLayout()->createBlock('cms/block')->setBlockId($sticky['content'])->toHtml();
+			else:
+				$content = $sticky['content'];
+			endif;
+			?>
+			<?php
+				$class = "sticky";
+				$class .= ($sticky['class'] != '')?' '.$sticky['class']:'';
+				$class .= ($sticky['style'] == '1')?' style-show-content':' style-show-title';
+				?>
+				<div class="<?php echo $class; ?>">
+					<?php if( $sticky['link'] != "" && $sticky['style'] != 1):?>
+					<a class="sticky-button" title="<?php echo $content; ?>" href="<?php echo $sticky['link'];?>" target="<?php echo $sticky['target']?>"><?php echo $sticky['icon'];?></a>
+					<?php else:?>
+					<span class="sticky-button"><?php echo $sticky['icon'];?></span>
+					<?php endif;?>
+					<?php if( $sticky['style'] == "1" ):?>
+					<div class="sticky-content">
+					<?php echo $content; ?>
+					</div>
+					<?php else:?>
+					<a class="sticky-content" title="<?php echo $content; ?>" href="<?php echo $sticky['link'];?>" target="<?php echo $sticky['target']?>"><?php echo $content;?></a>
+					<?php endif;?>
+					
+				</div>
+			<?php
+		endforeach;
+	endif;
+?>
+<script type="text/javascript">
+    jQuery(document).ready(function($){
+    	$(window).load(function(){
+    		$('#sns_sticky_right').addClass('show');
+    	});
+    	$i=0;
+        $('#sns_sticky_right .sticky').each(function(){
+        	$(this).css({
+        		'right' : - $(this).outerWidth(),
+        		'top' : 100 + $i*51
+        	});
+        	$i++;
+        	$(this).mouseenter(function(el){
+        		$(this).stop().animate({
+        			'right':'0px',
+        			'z-index':'999'
+        		}, 600);
+        	}).mouseleave(function(el){
+        		$(this).stop().animate({
+        			'right': - $(this).outerWidth(),
+        			'z-index':'998'
+        		}, 600);
+        	});
+        });
+    });
+</script>
+</div>
+<?php
+endif; ?>
+
+<?php
+$useSL = $themeCfg->getField('sticky_useStickyLeft'); 
+if($useSL == 1) : ?>
+<div id="sns_sticky_left">
+<?php
+	$stickyL = $themeCfg->getField('sticky_listStickyLeft');
+	$array_stickyL = unserialize($stickyL);
+	$collect_stickyL = array();
+	foreach($array_stickyL as $key=>$sticky){
+		//$sticky['icon'] = Mage::helper('cms')->getBlockTemplateProcessor()->filter($sticky['icon']);
+		$collect_stickyL[] = $sticky;
+	}
+	if($collect_stickyL) :
+		foreach($collect_stickyL as $sticky) :
+			if(Mage::getModel('cms/block')->load($sticky['content'])->getIsActive()):
+				$content = $this->getLayout()->createBlock('cms/block')->setBlockId($sticky['content'])->toHtml();
+			else:
+				$content = $sticky['content'];
+			endif;
+			?>
+			<?php
+				$class = "sticky";
+				$class .= ($sticky['class'] != '')?' '.$sticky['class']:'';
+				$class .= ($sticky['style'] == '1')?' style-show-content':' style-show-title';
+				?>
+				<div class="<?php echo $class; ?>">
+					<?php if( $sticky['link'] != "" && $sticky['style'] != 1):?>
+					<a class="sticky-button" title="<?php echo $content; ?>" href="<?php echo $sticky['link'];?>" target="<?php echo $sticky['target']?>"><?php echo $sticky['icon'];?></a>
+					<?php else:?>
+					<span class="sticky-button"><?php echo $sticky['icon'];?></span>
+					<?php endif;?>
+					<?php if( $sticky['style'] == "1" ):?>
+					<div class="sticky-content">
+					<?php echo $content; ?>
+					</div>
+					<?php else:?>
+					<a class="sticky-content" title="<?php echo $content; ?>" href="<?php echo $sticky['link'];?>" target="<?php echo $sticky['target']?>"><?php echo $content;?></a>
+					<?php endif;?>
+					
+				</div>
+			<?php
+		endforeach;
+	endif;
+?>
+<script type="text/javascript">
+    jQuery(document).ready(function($){
+    	$(window).load(function(){
+    		$('#sns_sticky_left').addClass('show');
+    	});
+    	$i=0;
+    	$('#sns_sticky_left .sticky').each(function(){
+        	$(this).css({
+        		'left' : - $(this).outerWidth(),
+        		'top' : 100 + $i*51
+        	});
+        	$i++;
+        	$(this).mouseenter(function(el){
+        		$(this).stop().animate({
+        			'left':'0px',
+        			'z-index':'999'
+        		}, 600);
+        	}).mouseleave(function(el){
+        		$(this).stop().animate({
+        			'left': - $(this).outerWidth(),
+        			'z-index':'998'
+        		}, 600);
+        	});
+        });
+    });
+</script>
+</div>
+<?php
+endif; ?>

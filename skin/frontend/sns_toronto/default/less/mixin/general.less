@@ -1,0 +1,153 @@
+// CSS3 PROPERTIES
+// --------------------------------------------------
+// Border Radius
+.border-radius(@radius) {
+  -webkit-border-radius: @radius;
+     -moz-border-radius: @radius;
+          border-radius: @radius;
+}
+// Transformations
+.transform(@transform) {
+  -webkit-transform: @transform;
+     -moz-transform: @transform;
+       -o-transform: @transform;
+          transform: @transform;
+}
+.transform-style(@style) {
+    transform-style: @style;
+    -webkit-transform-style: @style;
+}
+
+.rotate3d(@degrees) {
+  -webkit-transform: rotate3d(@degrees);
+      -ms-transform: rotate3d(@degrees); // IE9+
+          transform: rotate3d(@degrees);
+}
+// Reset filters for IE
+.reset-filter() {
+  filter: e(%("progid:DXImageTransform.Microsoft.gradient(enabled = false)"));
+}
+
+.effect-block-show() {
+	visibility: visible;
+	.opacity(1);
+	top: 100%;
+}
+.effect-block-hide() {
+	visibility: hidden;
+	display: block;
+	.transition(all 0.3s ease);
+	.opacity(0);
+	top: 120%;
+}
+.font-awesome (@code, @size){
+	content: '\@{code}';
+	display: inline-block;
+	font-family: FontAwesome;
+	font-style: normal;
+	font-weight: normal;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	.square(@size);
+	text-align: center;
+	line-height: @size;
+}
+.font-elegant (@code, @size){
+	font-family: 'ElegantIcons';
+	content: attr(data-icon);
+	speak: none;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	content: '\@{code}';
+	.square(@size);
+	text-align: center;
+	line-height: @size;
+}
+.ulclear() {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+.btn-gradient() {
+	background-color: @color1;
+	#gradient .vertical(spin(lighten(@color1, 5%), 20); spin(lighten(@color1, 5%), -20); 0%; 100%);
+	&:hover {
+		#gradient .vertical(spin(lighten(@color1, 5%), -20); spin(lighten(@color1, 5%), 20); 0%; 100%);
+	}
+}
+.inline-block(){
+	display: inline-block;
+	vertical-align: middle;
+}
+.bgfadeOut(@color, @percent){
+	background-color: @color;
+	background-color: fadeOut(@color, @percent);
+}
+.border-arrow-top (@width, @height, @color){
+	width: 0;
+	height: 0;
+	border-style: solid;
+	border-width: 0 @width/2 @height @width/2;
+	border-color: transparent transparent @color transparent;
+}
+.border-arrow-bottom (@width, @height, @color){
+	width: 0;
+	height: 0;
+	border-style: solid;
+	border-width: @height @width/2 0 @width/2;
+	border-color: @color transparent transparent transparent;
+}
+.border-arrow-right (@width, @height, @color){
+	width: 0;
+	height: 0;
+	border-style: solid;
+	border-width: @height/2 0 @height/2 @width;
+	border-color: transparent transparent transparent @color;
+}
+.border-arrow-left (@width, @height, @color){
+	width: 0;
+	height: 0;
+	border-style: solid;
+	border-width: @height/2 @width @height/2 0;
+	border-color: transparent @color transparent transparent;
+}
+.bg_diamond(@size, @color) {
+	position: relative;
+	.square(@size);
+	&:before, &:after {
+		content: '';
+		display: block;
+		position: absolute;
+		top: 0;
+	}
+	&:before {
+		right: 0;
+		.border-arrow-left (@size / 2, @size, @color);
+	}
+	&:after {
+		left: 0;
+		.border-arrow-right (@size / 2, @size, @color); 
+	}
+}
+.action-btn () {
+	.hide-text();
+	.square(34px);
+	.inline-block();
+	background: url(../images/ico/btn-action.png) no-repeat @text;
+	padding: 0;
+	margin: 0;
+	border: none;
+	border-radius: 0;
+	position: relative;
+	.transition (all 0.25s ease 0.1s);
+	margin-left: -2px;
+	&:hover {
+		background-color: @color1;
+	}
+}
+

@@ -1,0 +1,103 @@
+body{
+	overflow-x: hidden;
+	position: relative;
+	color: @color;
+	line-height: 165%;
+	font-size: 12px;
+	&.page-popup{
+		font-size: 12px;
+		padding: 20px 30px 30px;
+		.page-title{
+			h1{float: left;font-weight: normal; margin-top: 0px;
+				text-transform: none;color: @labelColor;
+			}
+			.link-print {
+				background: url("../images/i_print.gif") 0 2px no-repeat;
+				padding: 0 0 0 25px; margin: 10px 0 0; float: right;
+			}
+		}
+		.data-table thead th,
+		.data-table tbody th {
+			background: #efefef; padding-left: 10px; padding-right: 10px;
+		}
+		.compare-table{
+			td{vertical-align: top;
+				button{margin: 0 0;}
+			}
+			thead{
+				th,td{padding-top: 5px; padding-bottom: 5px; text-align: center;}
+			}
+		}
+		.product-name{line-height: normal; margin-bottom: 10px;}
+		.ratings,
+		.price-box{margin-bottom: 10px; text-align: center;}
+		.ratings .amount{font-size: 10px;}
+		.add-to-links{list-style: none; margin: 0 0; text-align: center;}
+		.product-shop-row td,
+		.add-to-row td{text-align: center;}
+	}
+	&.open-stickynote-top{
+		.stickynote-top{
+			.btn-close{top: 50%; margin-top: -11px; .transform(scale(1) rotate(0deg)); }
+		}
+	}
+}
+#bd.boxed-layout {
+	#sns_wrapper{
+		background: #FFF; max-width:1170px; margin: 0 auto;
+	}
+}
+a { 
+	color: @linkColor;
+	&:hover, &:focus, &:active {
+		color: @activeColor; 
+		text-decoration: none;
+	}
+}
+a, span, i {
+	.transition(all 0.25s ease);
+	&:hover {
+		.transition(all 0.25s ease);
+	}
+}
+h1,h2,h3,h4,h5,h6{margin-top: 0; font-weight: bold;}
+h1 {
+	font-size: 250%;
+}
+h2 {
+	font-size: 210%;
+}
+h3 {
+	font-size: 150%;
+	&.block-title {
+		font-size: 200%;
+		font-weight: bold;
+		text-transform: uppercase;
+	}
+}
+h4 {
+	font-size: 130%;
+}
+h5 {
+	font-size: 100%;
+}
+h6 {
+	font-size: 85%;
+}
+img {
+	max-width: 100%;
+	table & {
+		max-width: none;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+

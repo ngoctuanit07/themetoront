@@ -1,0 +1,218 @@
+<?xml version="1.0" ?><config>
+	<modules>
+		<Sns_Toronto>
+			<version>1.0.1</version>
+			<title>Sns Toronto</title>
+		</Sns_Toronto>
+	</modules>
+	<frontend>
+		<routers>
+			<toronto>
+				<use>standard</use>
+				<args>
+					<module>Sns_Toronto</module>
+					<frontName>Toronto</frontName>
+				</args>
+			</toronto>
+		</routers>
+	</frontend>
+	<global>
+		<helpers>
+			<toronto>
+				<class>Sns_Toronto_Helper</class>
+			</toronto>
+			<cms>
+				<rewrite>
+					<wysiwyg_images>Sns_Toronto_Helper_Cms_Wysiwyg_Images</wysiwyg_images>
+				</rewrite>
+			</cms>
+		</helpers>
+		<models>
+			<toronto>
+				<class>Sns_Toronto_Model</class>
+			</toronto>
+		</models>
+		<blocks>
+			<toronto>
+				<class>Sns_Toronto_Block</class>
+			</toronto>
+			<adminhtml>
+				<rewrite>
+					<cms_wysiwyg_images_content>Sns_Toronto_Block_Adminhtml_Cms_Wysiwyg_Images_Content</cms_wysiwyg_images_content>
+				</rewrite>
+			</adminhtml>
+		</blocks>
+		<resources>
+			<sns_toronto_setup>
+				<setup>
+					<module>Sns_Toronto</module>
+					<class>Sns_Toronto_Model_Resource_Eav_Mysql4_Setup</class>
+				</setup>
+				<connection>
+					<use>core_setup</use>
+				</connection>
+			</sns_toronto_setup>
+			<toronto_write>
+				<connection>
+					<use>core_write</use>
+				</connection>
+			</toronto_write>
+			<toronto_read>
+				<connection>
+					<use>core_read</use>
+				</connection>
+			</toronto_read>
+		</resources>
+	</global>
+	<admin>
+		<routers>
+			<adminhtml>
+				<args>
+					<modules>
+						<Sns_Toronto before="Mage_Adminhtml">Sns_Toronto_Adminhtml</Sns_Toronto>
+					</modules>
+				</args>
+			</adminhtml>
+		</routers>
+	</admin>
+	<adminhtml>
+		<menu>
+			<snstheme>
+				<title>SNS Theme</title>
+				<sort_order>87</sort_order>
+				<children>
+					<toronto>
+						<title>SNS Toronto</title>
+						<action>adminhtml/system_config/edit/section/sns_toronto_cfg/</action>
+					</toronto>
+					<toronto_sticky>
+						<title>SNS Toronto Sticky</title>
+						<action>adminhtml/system_config/edit/section/sns_toronto_sticky/</action>
+					</toronto_sticky>
+				</children>
+			</snstheme>
+		</menu>
+		<acl>
+			<resources>
+				<admin>
+					<children>
+						<system>
+							<children>
+								<config>
+									<children>
+										<sns_toronto_cfg translate="title" module="toronto">
+											<title>SNS Toronto Section</title>
+										</sns_toronto_cfg>
+										<sns_toronto_sticky translate="title" module="toronto">
+											<title>SNS Toronto Sticky Section</title>
+										</sns_toronto_sticky>
+									</children>
+								</config>
+							</children>
+						</system>
+					</children>
+				</admin>
+			</resources>
+		</acl>
+		<layout>
+			<updates>
+				<toronto>
+					<file>sns/toronto.xml</file>
+				</toronto>
+			</updates>
+		</layout>
+		<translate>
+			<modules>
+				<Sns_Toronto>
+					<files>
+						<default>Sns_Toronto.csv</default>
+					</files>
+				</Sns_Toronto>
+			</modules>
+		</translate>
+	</adminhtml>
+	<default>
+		<sns_toronto_sticky>
+			<sticky>
+			     <listStickyLeft><![CDATA[a:0:{}]]></listStickyLeft>
+			     <listStickyRight><![CDATA[a:5:{s:18:"_1410513971231_231";a:6:{s:4:"icon";s:38:"";s:5:"class";s:15:"social-facebook";s:4:"link";s:1:"#";s:6:"target";s:6:"_blank";s:5:"style";s:1:"2";s:7:"content";s:8:"Facebook";}s:18:"_1410514032603_603";a:6:{s:4:"icon";s:37:"";s:5:"class";s:14:"social-twitter";s:4:"link";s:1:"#";s:6:"target";s:6:"_blank";s:5:"style";s:1:"2";s:7:"content";s:7:"Twitter";}s:18:"_1410514054570_570";a:6:{s:4:"icon";s:40:"";s:5:"class";s:12:"social-gplus";s:4:"link";s:1:"#";s:6:"target";s:6:"_blank";s:5:"style";s:1:"2";s:7:"content";s:11:"Google Plus";}s:17:"_1410514096035_35";a:6:{s:4:"icon";s:36:"";s:5:"class";s:13:"social-flickr";s:4:"link";s:1:"#";s:6:"target";s:6:"_blank";s:5:"style";s:1:"2";s:7:"content";s:6:"Flickr";}s:18:"_1410514115998_998";a:6:{s:4:"icon";s:39:"";s:5:"class";s:9:"pinterest";s:4:"link";s:1:"#";s:6:"target";s:6:"_blank";s:5:"style";s:1:"2";s:7:"content";s:9:"Pinterest";}}]]></listStickyRight>
+			     <useStickyLeft><![CDATA[0]]></useStickyLeft>
+			     <useStickyRight><![CDATA[1]]></useStickyRight>
+			</sticky>
+		</sns_toronto_sticky>
+		<sns_toronto_cfg module="toronto">
+			<advance>
+			     <customcss><![CDATA[]]></customcss>
+			     <lessEnabled><![CDATA[1]]></lessEnabled>
+			     <scrollToTop><![CDATA[1]]></scrollToTop>
+			     <showCpanel><![CDATA[1]]></showCpanel>
+			     <showTooltip><![CDATA[1]]></showTooltip>
+			     <themeColor><![CDATA[#fe2883]]></themeColor>
+			</advance>
+			<footer>
+			     <staticblock_col1><![CDATA[toronto_aboutus]]></staticblock_col1>
+			     <staticblock_col2><![CDATA[toronto_footer_block1]]></staticblock_col2>
+			     <staticblock_col3><![CDATA[toronto_footer_block2]]></staticblock_col3>
+			     <staticblock_col4><![CDATA[toronto_footer_block3]]></staticblock_col4>
+			     <staticblock_col5><![CDATA[toronto_footer_block4]]></staticblock_col5>
+			     <staticblock_col6><![CDATA[0]]></staticblock_col6>
+			</footer>
+			<general>
+			     <bodyBgColor><![CDATA[#cccccc]]></bodyBgColor>
+			     <bodyBgImage><![CDATA[pattern_6]]></bodyBgImage>
+			     <fontFamily><![CDATA[arial]]></fontFamily>
+			     <fontSize><![CDATA[12px]]></fontSize>
+			     <googleFont><![CDATA[Open+Sans:400,700]]></googleFont>
+			     <googleFontTargets><![CDATA[body#bd]]></googleFontTargets>
+			     <layoutType><![CDATA[2]]></layoutType>
+			     <useTagNew><![CDATA[1]]></useTagNew>
+			     <useTagSale><![CDATA[1]]></useTagSale>
+			</general>
+			<install>
+			     <overwrite_blocks><![CDATA[0]]></overwrite_blocks>
+			     <overwrite_pages><![CDATA[0]]></overwrite_pages>
+			</install>
+			<listingpage>
+			     <displayAddtocart><![CDATA[1]]></displayAddtocart>
+			     <displayCompare><![CDATA[1]]></displayCompare>
+			     <displayWishlist><![CDATA[1]]></displayWishlist>
+			     <styleForGird><![CDATA[style2]]></styleForGird>
+			</listingpage>
+			<menu>
+			     <customItems><![CDATA[a:1:{s:18:"_1402848764295_295";a:6:{s:5:"title";s:4:"Home";s:4:"link";s:16:"{{store url=""}}";s:6:"target";s:5:"_self";s:8:"position";s:5:"first";s:8:"block_id";s:1:"0";s:6:"status";s:1:"0";}}]]></customItems>
+			     <keepMenu><![CDATA[0]]></keepMenu>
+			     <resMenu><![CDATA[sidebar]]></resMenu>
+			</menu>
+			<ourpartners>
+			     <enabled><![CDATA[1]]></enabled>
+			     <partners><![CDATA[a:8:{s:18:"_1401855295279_279";a:4:{s:5:"title";s:9:"SNS Group";s:4:"link";s:1:"#";s:6:"target";s:6:"_blank";s:5:"image";s:28:"wysiwyg/toronto/brands/1.png";}s:18:"_1401855478160_160";a:4:{s:5:"title";s:9:"SNS Group";s:4:"link";s:1:"#";s:6:"target";s:6:"_blank";s:5:"image";s:28:"wysiwyg/toronto/brands/2.png";}s:18:"_1401855478901_901";a:4:{s:5:"title";s:9:"SNS Group";s:4:"link";s:1:"#";s:6:"target";s:6:"_blank";s:5:"image";s:28:"wysiwyg/toronto/brands/3.png";}s:18:"_1401855479467_467";a:4:{s:5:"title";s:9:"SNS Group";s:4:"link";s:1:"#";s:6:"target";s:6:"_blank";s:5:"image";s:28:"wysiwyg/toronto/brands/4.png";}s:17:"_1401855480058_58";a:4:{s:5:"title";s:9:"SNS Group";s:4:"link";s:1:"#";s:6:"target";s:6:"_blank";s:5:"image";s:28:"wysiwyg/toronto/brands/5.png";}s:18:"_1401855480608_608";a:4:{s:5:"title";s:9:"SNS Group";s:4:"link";s:1:"#";s:6:"target";s:6:"_blank";s:5:"image";s:28:"wysiwyg/toronto/brands/6.png";}s:18:"_1401855481156_156";a:4:{s:5:"title";s:9:"SNS Group";s:4:"link";s:1:"#";s:6:"target";s:6:"_blank";s:5:"image";s:28:"wysiwyg/toronto/brands/3.png";}s:18:"_1401855482434_434";a:4:{s:5:"title";s:9:"SNS Group";s:4:"link";s:1:"#";s:6:"target";s:6:"_blank";s:5:"image";s:28:"wysiwyg/toronto/brands/4.png";}}]]></partners>
+			     <title><![CDATA[Our Brands]]></title>
+			</ourpartners>
+			<productpage>
+			     <staticblockid><![CDATA[0]]></staticblockid>
+			     <staticblockstatus><![CDATA[1]]></staticblockstatus>
+			     <useAddThis><![CDATA[0]]></useAddThis>
+			</productpage>
+			<slidercategory>
+			     <category><![CDATA[a:7:{s:18:"_1410258639830_830";a:4:{s:5:"title";s:12:"Chair Design";s:4:"link";s:33:"{{store url="living-rooms.html"}}";s:6:"target";s:5:"_self";s:5:"image";s:35:"wysiwyg/toronto/cat-thumb/cat-1.jpg";}s:18:"_1410260661503_503";a:4:{s:5:"title";s:10:"Wood Chair";s:4:"link";s:41:"{{store url="living-rooms/evening.html"}}";s:6:"target";s:5:"_self";s:5:"image";s:35:"wysiwyg/toronto/cat-thumb/cat-2.jpg";}s:18:"_1410260688355_355";a:4:{s:5:"title";s:4:"Sofa";s:4:"link";s:41:"{{store url="living-rooms/evening.html"}}";s:6:"target";s:5:"_self";s:5:"image";s:35:"wysiwyg/toronto/cat-thumb/cat-3.jpg";}s:18:"_1410260707318_318";a:4:{s:5:"title";s:12:"Office Chair";s:4:"link";s:41:"{{store url="living-rooms/sweater.html"}}";s:6:"target";s:5:"_self";s:5:"image";s:35:"wysiwyg/toronto/cat-thumb/cat-4.jpg";}s:18:"_1410260726405_405";a:4:{s:5:"title";s:10:"Lady Chair";s:4:"link";s:41:"{{store url="living-rooms/sweater.html"}}";s:6:"target";s:5:"_self";s:5:"image";s:35:"wysiwyg/toronto/cat-thumb/cat-5.jpg";}s:17:"_1410260731092_92";a:4:{s:5:"title";s:3:"Bed";s:4:"link";s:33:"{{store url="sofa-couches.html"}}";s:6:"target";s:5:"_self";s:5:"image";s:35:"wysiwyg/toronto/cat-thumb/cat-6.jpg";}s:17:"_1410261997020_20";a:4:{s:5:"title";s:12:"Living Rooms";s:4:"link";s:25:"{{store url="beds.html"}}";s:6:"target";s:5:"_self";s:5:"image";s:35:"wysiwyg/toronto/cat-thumb/cat-7.jpg";}}]]></category>
+			     <enabled><![CDATA[1]]></enabled>
+			     <title><![CDATA[Category]]></title>
+			</slidercategory>
+			<storelocation>
+			     <map_zoom><![CDATA[12]]></map_zoom>
+			     <status><![CDATA[1]]></status>
+			     <store_address><![CDATA[1600 Pennsylvania Avenue NW, Washington, D.C]]></store_address>
+			     <store_email><![CDATA[contact@toronto.com]]></store_email>
+			     <store_fax><![CDATA[+04 123 456 789]]></store_fax>
+			     <store_info><![CDATA[Lorem Ipsum has been the industry's standard dummy text ever since the 1500s]]></store_info>
+			     <store_name><![CDATA[Toronto]]></store_name>
+			     <store_phone><![CDATA[+04 123 456 789]]></store_phone>
+			</storelocation>
+			<testimonial>
+			     <enabled><![CDATA[0]]></enabled>
+			     <items><![CDATA[a:0:{}]]></items>
+			     <title><![CDATA[Clien say]]></title>
+			</testimonial>
+		</sns_toronto_cfg>
+	</default>
+</config>

@@ -1,0 +1,29 @@
+<?php
+	$themeconfig = Mage::helper('toronto/data');
+?>
+<div id="contact_gmap">
+	<div id="google_map" style="height: 250px"></div>
+	<?php echo $this->getLayout()->createBlock('core/template')->setTemplate('sns/blocks/utilities/gmap.phtml')->toHtml(); ?>
+	<div class="btn-close-open"></div>
+	<div class="contact-info">
+		<div class="block-title"><?php echo $this->__('Contact Us'); ?></div>
+		<p><?php echo $themeconfig->getField('storelocation_store_info'); ?></p>
+		<ul class="fa-ul">
+			<li><i class="fa-li" data-icon="&#xe009;"></i><?php echo $themeconfig->getField('storelocation_store_address'); ?></li>
+			<li><i class="fa-li" data-icon="&#xe090;"></i><?php echo $themeconfig->getField('storelocation_store_phone'); ?></li>
+			<li><i class="fa-li" data-icon="&#xe0fa;"></i><?php echo $themeconfig->getField('storelocation_store_fax'); ?></li>
+			<li><i class="fa-li" data-icon="&#xe010;"></i><a href="mailto:<?php echo $themeconfig->getField('storelocation_store_email'); ?>"><?php echo $themeconfig->getField('storelocation_store_email'); ?></a></li>
+		</ul>
+	</div>
+	<script>
+		jQuery(document).ready(function($){
+			$('#contact_gmap .btn-close-open').click(function(){
+				if( $(this).parents('#contact_gmap').hasClass('active') ){
+					$(this).parents('#contact_gmap').removeClass('active');
+				}else{
+					$(this).parents('#contact_gmap').addClass('active');
+				}
+			});
+		});
+	</script>
+</div>

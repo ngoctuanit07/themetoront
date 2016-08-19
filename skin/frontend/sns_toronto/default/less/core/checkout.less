@@ -1,0 +1,67 @@
+.checkout-progress{ 
+	margin: 10px 0 35px 0; 
+	list-style: none; 
+	padding: 0;
+	li{display: inline-block; padding: 5px 0px; width: 20%; text-align: center; background: #e9e9e9; float: left;
+		color: #686868;
+		&.active{ background: @activeColor; color: #FFF;}
+	}
+}
+.multiple-checkout{
+	h2{font-size: 120%; line-height: 24px;}
+	.col2-set{
+		h2.legend{font-size: 135%;}
+		h3.legend{font-size: 120%;}
+		//h2,h3,h4{line-height: 26px; font-size: 100%;}
+		.product-name{font-size: 120%;}
+		.box .box-title{
+			h2,h3,h4{ //line-height: 26px; font-size: 100%;margin: 0 0;
+				a{position: static;}
+			}
+		}
+		.col-1{margin-top: 5px;}
+		.col-2{margin-top: 5px;}
+	}
+	.sp-methods{
+		dt{
+			input{float: left;margin: 1px 8px 0 0;}
+			label{cursor: pointer;}
+		}
+		dd{
+			ul{list-style: none;}
+		}
+	}
+	#checkout-review-submit{float: right; text-align: right;margin-top: 10px;}
+}
+#checkoutSteps{
+	.ulclear();
+	ul, ol{.ulclear(); margin-bottom: 10px;}
+	li{
+		margin-bottom: 5px;
+		.step-title{ padding: 8px 15px; background: #e9e9e9; color: @labelColor;
+			.number{float: left; padding: 0 5px; margin: 0 10px 0 0; background: @labelColor; color:#FFF;}
+			h2{font-size: 125%; text-transform: uppercase; float: left; line-height: normal; margin: 0 0;}
+			a{float: right}
+		}
+		&.allow{
+			.step-title{ cursor: pointer;}
+		}
+		&.active{
+			.step-title{ background: #FFF;border: 1px solid #e9e9e9; border-bottom: none;  cursor: default;}
+		}
+		.step{ border: 1px solid #e9e9e9; padding: 15px 20px;
+			fieldset{
+				ul{list-style: none; margin: 0 0;
+				}
+				p.required{text-align: right;}
+			}
+		}
+	}
+	.sp-methods{
+		dt{ clear: both; padding: 2px 0;
+			input{margin: 1px 5px 0 0; float: left;}
+			label{float: left; margin: 0 0; cursor: pointer}
+		}
+	}
+	.please-wait{ margin: 0 20px;}
+}

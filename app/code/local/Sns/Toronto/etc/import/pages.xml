@@ -1,0 +1,110 @@
+
+<root>
+  <pages>
+    <cms_block>
+      <title>Home page</title>
+      <identifier>toronto_homepage</identifier>
+      <content><![CDATA[<div class="no-display">&nbsp;</div>]]></content>
+      <is_active>1</is_active>
+      <stores>
+        <item>0</item>
+      </stores>
+      <root_template>one_column</root_template>
+      <layout_update_xml><![CDATA[<reference name="before_content">
+	<block type="toronto/wrapper" name="section.slideshow">
+		<action method="setId"><id>sns_slideshow</id></action>
+		<action method="setParams"><params>class="wrap"</params></action>
+		<block type="revolutionslider/list" name="revolutionslider.list" as="slideshow"></block>
+	</block>
+	<block type="toronto/wrapper" name="section.slidercategory">
+		<action method="setId"><id>sns_category</id></action>
+		<action method="setParams"><params>class="wrap"</params></action>
+		<block type="toronto/wrapper" name="wrap.slidercategory">
+			<action method="setParams"><params>class="container"</params></action>
+			<block type="core/template" template="sns/blocks/category.phtml" />
+		</block>
+	</block>
+</reference>
+<reference name="content">
+	<block type="cms/block" name="toronto_mbanner1">
+		<action method="setBlockId"><block_id>toronto_mbanner1</block_id></action>
+	</block>
+	<block type="producttabs/list" name="producttabs.list">
+	</block>
+	<block type="cms/block" name="toronto_mbanner2">
+		<action method="setBlockId"><block_id>toronto_mbanner2</block_id></action>
+	</block>
+	<block type="toronto/wrapper" name="three.slider">
+		<action method="setParams"><params>class="row three-slider"</params></action>
+		<block type="toronto/wrapper" name="wrap.slider1">
+			<action method="setParams"><params>class="col-md-4 col-sm-6"</params></action>
+			<block type="slider/list" name="slider1" template="sns/slider/column-style.phtml">
+				<action method="setConfig">
+					<name>
+						<title>Best Sales</title>
+						<product_order_by>best_sales</product_order_by>
+						<pretext></pretext>
+					</name>
+				</action>
+			</block>
+		</block>
+		<block type="toronto/wrapper" name="wrap.slider3">
+			<action method="setParams"><params>class="col-md-4 col-sm-6"</params></action>
+			<block type="slider/list" name="slider3" template="sns/slider/column-style.phtml">
+				<action method="setConfig">
+					<name>
+						<title>Featured Products</title>
+						<product_order_by>is_featured</product_order_by>
+						<pretext></pretext>
+					</name>
+				</action>
+			</block>
+		</block>
+		<block type="toronto/wrapper" name="wrap.slider2">
+			<action method="setParams"><params>class="col-md-4 col-sm-12"</params></action>
+			<block type="slider/list" name="slider2">
+				<action method="setConfig">
+					<name>
+						<title>Hot Deals</title>
+						<product_order_by>create_at</product_order_by>
+						<product_filter_by>deals</product_filter_by>
+						<pretext></pretext>
+					</name>
+				</action>
+			</block>
+		</block>
+	</block>
+	<block type="blog/blog" name="blog.custom" template="aw_blog/custom-bloglatest.phtml">
+	</block>
+	<block type="cms/block" name="toronto_mbanner3">
+		<action method="setBlockId"><block_id>toronto_mbanner3</block_id></action>
+	</block>
+</reference>
+
+<reference name="after_content">
+	<block type="toronto/wrapper" name="section.partners">
+		<action method="setId"><id>sns_partners</id></action>
+		<action method="setContainer"><container>1</container></action>
+		<action method="setParams"><params>class="wrap"</params></action>
+		<block type="core/template" template="sns/blocks/partners.phtml" />
+	</block>
+	<block type="toronto/wrapper" name="section.botsl">
+		<action method="setId"><id>sns_botsl</id></action>
+		<action method="setParams"><params>class="wrap"</params></action>
+		<action method="setContainer"><container>1</container></action>
+        <action method="setRow"><row>1</row></action>
+		<block type="toronto/wrapper" name="section.botsl.newsletters">
+			<action method="setParams"><params>class="col-md-3 col-sm-5"</params></action>
+			<block type="cms/block" name="toronto_custom_block">
+				<action method="setBlockId"><block_id>toronto_newsletters</block_id></action>
+			</block>
+		</block>
+		<block type="toronto/wrapper" name="section.botsl.findus">
+			<action method="setParams"><params>class="col-md-9 col-sm-7 block block-findus"</params></action>
+			<block type="core/template" template="sns/blocks/findus.phtml" />
+		</block>
+	</block>
+</reference>]]></layout_update_xml>
+    </cms_block>
+  </pages>
+</root>
